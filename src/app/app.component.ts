@@ -1,6 +1,4 @@
-import { ModalService } from './services/modal.service';
-import { Component, OnInit } from '@angular/core';
-import { ProductsService } from './services/products.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',

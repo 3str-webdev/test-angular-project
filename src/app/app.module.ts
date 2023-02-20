@@ -1,3 +1,4 @@
+import { productsReducer } from './store/reducers/products.reducer';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +15,8 @@ import { FocusDirective } from './directives/focus.directive';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import { LayoutComponent } from './components/layout/layout.component';
     AboutPageComponent,
     ProductsPageComponent,
     LayoutComponent,
+    ProductPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,7 @@ import { LayoutComponent } from './components/layout/layout.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    StoreModule.forRoot({ products: productsReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,8 +1,16 @@
-<header class="absolute top-0 left-0 right-0 h-[50px] bg-blue-400 flex justify-between items-center px-3">
+<header
+  class="absolute top-0 left-0 right-0 h-[50px] bg-blue-400 flex justify-between items-center px-3"
+>
   <nav>
-    <ul class="flex gap-2">
-      <li *ngFor="let link of routes">
-        <a [routerLink]="link.path" class="text-black">{{ link.title }}</a>
+    <ul class="flex gap-5">
+      <li *ngFor="let link of menuRoutes">
+        <a
+          *ngIf="link.title"
+          [routerLink]="link.path"
+          routerLinkActive="font-bold"
+        >
+          {{ link.title }}
+        </a>
       </li>
     </ul>
   </nav>

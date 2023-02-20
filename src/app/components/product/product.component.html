@@ -1,6 +1,11 @@
 <div class="py-4 px-6 border rounded flex items-center flex-col mb-2">
-  <img [src]="product.image" alt="product image" class="w-1/6 mb-2" />
-  <h2 class="mb-2 text-md text-center">{{ product.title }}</h2>
+  <a
+    class="flex items-center flex-col gap-2 rounded cursor-pointer py-2 mb-4 hover:shadow-md"
+    routerLink="./{{ product.id }}"
+  >
+    <img [src]="product.image" alt="product image" class="w-1/6 mb-2" />
+    <h2 class="mb-2 text-md text-center">{{ product.title }}</h2>
+  </a>
   <p>
     Price: <strong>{{ product.price | currency }}</strong>
   </p>
@@ -18,6 +23,6 @@
 
   <div *ngIf="details" class="mt-2">
     <p>{{ product.description }}</p>
-    <p>Rate: {{ product.rating.rate | number: '1.2' }}</p>
+    <p>Rate: {{ product.rating.rate | number : "1.2" }}</p>
   </div>
 </div>

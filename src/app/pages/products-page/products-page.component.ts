@@ -14,12 +14,14 @@ export class ProductsPageComponent implements OnInit {
 
   constructor(
     public productsService: ProductsService,
-    public modalService: ModalService
+    public modalService: ModalService,
   ) {}
 
   ngOnInit(): void {
+    console.log(this.productsService.products$);
+
     this.loading = true;
-    this.productsService.getAll().subscribe(() => {
+    this.productsService.getAll().subscribe((products) => {
       this.loading = false;
     });
   }

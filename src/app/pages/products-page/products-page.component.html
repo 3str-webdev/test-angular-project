@@ -9,7 +9,7 @@
 
 <p *ngIf="loading" class="text-center font-bold text-lg">Loading...</p>
 
-<div *ngIf="this.productsService.products as products">
+<div *ngIf="this.productsService.products$ | async as products">
   <app-product
     *ngFor="let product of products | filterProducts : filter; let i = index"
     [product]="product"

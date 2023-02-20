@@ -8,6 +8,9 @@ import { routes } from 'src/app/app-routing.module';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
-  routes: Route[] = routes;
+  menuRoutes: Pick<Route, 'path' | 'title'>[] = [
+    { path: 'products', title: 'Products' },
+    { path: 'about', title: 'About' },
+  ];
   constructor() {}
 }
